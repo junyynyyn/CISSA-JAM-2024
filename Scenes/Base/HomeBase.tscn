@@ -181,6 +181,7 @@ texture = ExtResource("3_3jxh0")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
+modulate = Color(0.788235, 0.203922, 0.192157, 1)
 offset_left = -41.0
 offset_top = -66.0
 offset_right = 53.0

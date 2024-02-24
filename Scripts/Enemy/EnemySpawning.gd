@@ -1,16 +1,17 @@
 extends Node2D
 
 var basic_plane = load("res://Scenes/EnemyPlanes/BasicEnemyPlane.tscn")
+var basic_plane_2 = load("res://Scenes/EnemyPlanes/BasicLevel2EnemyPlane.tscn")
 
-signal plane_defeated
+signal wave_clear
 
 func spawn_wave(wave):
-	for i in wave:
+	for i in wave % 10:
 		%SpawnPoint.progress_ratio = randf()
 		var plane = basic_plane.instantiate()
 		plane.global_position = %SpawnPoint.global_position
 		add_child(plane)
-		plane.connect("defeated", _plane_defeated)
-		
-func _plane_defeated():
-	plane_defeated.emit()
+
+func _process(delta):
+	if (get_child_count() == 1):
+		wave_clear.emit()

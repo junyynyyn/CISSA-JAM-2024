@@ -4,6 +4,7 @@ extends CharacterBody2D
 var MAX_HEALTH
 var DAMAGE
 var SPEED
+var REWARD
 
 var health
 
@@ -17,4 +18,5 @@ func damage(damage: int):
 
 func die():
 	defeated.emit()
+	global.money += REWARD
 	queue_free()

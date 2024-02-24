@@ -7,7 +7,6 @@ var money
 func _ready():
 	global.base = self
 	hp = MAX_HEALTH
-	money = 200
 	%HealthBar.max_value = MAX_HEALTH
 	%HealthBar.value = hp
 	

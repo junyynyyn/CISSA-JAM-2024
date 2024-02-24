@@ -7,6 +7,7 @@ func _ready():
 	MAX_HEALTH = 2
 	SPEED = 25
 	DAMAGE = 1
+	REWARD = 20
 	health = MAX_HEALTH
 	target = global.base.position
 
