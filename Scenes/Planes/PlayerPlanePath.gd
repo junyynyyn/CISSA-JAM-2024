@@ -26,7 +26,7 @@ func _ready():
 			infinity_curve.add_point(Vector2(-SIZE/2, 0).rotated(deg_to_rad(180) - (i/float(NUM_POINTS)) * 2 * TAU) + Vector2(SIZE/2, 0))
 		else:
 			infinity_curve.add_point(Vector2(-SIZE/2, 0).rotated((i/float(NUM_POINTS)) * 2 * TAU) - Vector2(SIZE/2, 0))
-	infinity_curve.add_point(Vector2(-SIZE/2, 0))
+	infinity_curve.add_point(Vector2(-SIZE, 0))
 		
 	# Change starting curve here
 	curve = infinity_curve
