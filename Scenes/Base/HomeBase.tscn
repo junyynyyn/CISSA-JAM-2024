@@ -157,7 +157,7 @@ tile_set = SubResource("TileSet_widf0")
 format = 2
 layer_0/tile_data = PackedInt32Array(-3, 262145, 5, 65533, 262145, 6, 131069, 262145, 6, -2, 458753, 5, 65534, 262145, 7, 131070, 327681, 6, -1, 327681, 5, 65535, 327681, 6, 131071, 327681, 7, -65536, 458753, 5, 0, 262145, 7, 65536, 327681, 6, -65535, 327681, 5, 1, 327681, 6, 65537, 327681, 7, -65534, 458753, 5, 2, 262145, 7, 65538, 327681, 6, -65533, 393217, 5, 3, 458753, 6, 65539, 458753, 6, -65539, 262145, 4, -65538, 327681, 4, -65537, 327681, 4, -131072, 327681, 4, -131071, 327681, 4, -131070, 327681, 4, -131069, 393217, 4)
 
-[node name="Hitbox" type="Area2D" parent="." groups=["intersect_area"]]
+[node name="Hitbox" type="Area2D" parent="." groups=["intersect_area", "player_base"]]
 collision_layer = 4
 collision_mask = 10
 
@@ -178,6 +178,13 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_3jxh0")
 
 [node name="BaseShield" parent="." instance=ExtResource("4_sst0o")]
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -41.0
+offset_top = -66.0
+offset_right = 53.0
+offset_bottom = -39.0
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

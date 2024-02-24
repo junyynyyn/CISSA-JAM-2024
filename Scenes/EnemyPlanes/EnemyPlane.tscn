@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bqa05338fx3y5"]
 
-[node name="EnemyPlane" type="CharacterBody2D"]
+[node name="EnemyPlane" type="CharacterBody2D" groups=["enemy_plane"]]
 collision_layer = 2
 collision_mask = 12
 

@@ -1,7 +1,7 @@
 extends Node2D
 
 var blue_plane = load("res://Scenes/Planes/PlayerPlaneBlue.tscn")
-var point = load("res://Scenes/PlanePoint.tscn")
+var point = load("res://Scenes/UI/PlanePoint.tscn")
 
 func _process(delta):
 	if (Input.is_action_just_pressed("place") and global.mouse.placeable and !global.mouse.intersecting):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://buq8n2bm72jkh"]
+[gd_scene load_steps=23 format=3 uid="uid://buq8n2bm72jkh"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_68hbw"]
 [ext_resource type="Texture2D" uid="uid://dn6uoc18ol23k" path="res://Sprites/kenney_tiny-town/Tilemap/tilemap.png" id="1_ui5r5"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/Enemy/EnemySpawning.gd" id="6_i4kkq"]
 [ext_resource type="Texture2D" uid="uid://c40wbt4w57hjc" path="res://Sprites/kenney_ui-pack/PNG/grey_button10.png" id="7_83lhs"]
 [ext_resource type="Script" path="res://Scripts/UI/PlaneSelector.gd" id="7_rmv1c"]
+[ext_resource type="PackedScene" uid="uid://bdsej6o2bthw0" path="res://Scenes/EnemyPlanes/BasicLevel2EnemyPlane.tscn" id="7_tmbvq"]
 [ext_resource type="ButtonGroup" uid="uid://c0v6iwadftcho" path="res://Scenes/UI/button_group.tres" id="8_3go7y"]
 [ext_resource type="Texture2D" uid="uid://chbrsiuuveg1k" path="res://Sprites/kenney_ui-pack/PNG/blue_button09.png" id="8_ajk76"]
 [ext_resource type="Texture2D" uid="uid://br1e2lmys2st7" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0008.png" id="9_vs3sc"]
@@ -201,6 +202,9 @@ curve = SubResource("Curve2D_3bfa2")
 unique_name_in_owner = true
 position = Vector2(-211, -254)
 rotation = -0.00728585
+
+[node name="EnemyPlane" parent="EnemyPlanes" instance=ExtResource("7_tmbvq")]
+position = Vector2(-336, 528)
 
 [node name="MousePointer" type="Area2D" parent="."]
 collision_layer = 16

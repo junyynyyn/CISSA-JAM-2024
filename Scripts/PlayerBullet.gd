@@ -11,10 +11,6 @@ var hit_something = false
 const KILL_TIME = 4.0
 var timer = 0.0
 
-func _ready():
-	$Area2D.connect("body_entered", collided)
-
-
 func _physics_process(delta):
 	timer += delta
 	if timer >= KILL_TIME:
@@ -24,7 +20,8 @@ func _physics_process(delta):
 
 func collided(body):
 	if hit_something == false:
-		# Body takes damage here
+		if (body.is_in_group("enemy_plane")):
+			body.damage(DAMAGE)
 		pass
 	hit_something = true
 	queue_free()

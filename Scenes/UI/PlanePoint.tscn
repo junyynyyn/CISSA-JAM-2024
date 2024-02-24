@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxqcwpg3cudod"]
 
-[ext_resource type="Texture2D" uid="uid://bkfopj7vj5lxe" path="res://Sprites/kenney_pixel-shmup/Tiles/tile_0027.png" id="1_ibpus"]
+[ext_resource type="Texture2D" uid="uid://bkfopj7vj5lxe" path="res://Sprites/kenney_pixel-shmup/Tiles/tile_0027.png" id="1_1jg7x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7kgjh"]
 size = Vector2(14, 14)
@@ -8,7 +8,7 @@ size = Vector2(14, 14)
 [node name="PlaneOriginPoint" type="Marker2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ibpus")
+texture = ExtResource("1_1jg7x")
 
 [node name="Area2D" type="Area2D" parent="." groups=["intersect_area"]]
 collision_layer = 16

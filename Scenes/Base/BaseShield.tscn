@@ -1,16 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://cs0yhnoq0tpwu"]
 
 [ext_resource type="Texture2D" uid="uid://bjq53l7fc1eoj" path="res://Sprites/Custom/blue_side_shield.png" id="1_0g4et"]
-[ext_resource type="Script" path="res://Scripts/Base/BaseShield.gd" id="1_vsghy"]
+[ext_resource type="Script" path="res://Scripts/Base/BaseShield.gd" id="1_evn6u"]
 [ext_resource type="Texture2D" uid="uid://ou03sclqhhav" path="res://Sprites/Custom/blue_circle_shield.png" id="2_obg00"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hg2f"]
 radius = 36.0
 
 [node name="BaseShield" type="Node2D"]
-script = ExtResource("1_vsghy")
+script = ExtResource("1_evn6u")
 
 [node name="BulletShield" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="BulletShield"]
 self_modulate = Color(1, 1, 1, 0.588235)
@@ -22,6 +24,8 @@ scale = Vector2(2, 2)
 polygon = PackedVector2Array(-36, 10, -25, -5, 0, -10, 25, -5, 36, 10)
 
 [node name="BombShield" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="ShieldCollision" type="CollisionShape2D" parent="BombShield"]
 scale = Vector2(2, 2)

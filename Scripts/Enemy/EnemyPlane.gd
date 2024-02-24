@@ -9,6 +9,12 @@ var health
 
 signal defeated
 
+func damage(damage: int):
+	print("Hit!")
+	health -= damage
+	if (health <= 0):
+		die()
+
 func die():
 	defeated.emit()
 	queue_free()
