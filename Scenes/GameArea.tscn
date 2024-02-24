@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://buq8n2bm72jkh"]
+[gd_scene load_steps=7 format=3 uid="uid://buq8n2bm72jkh"]
 
 [ext_resource type="Texture2D" uid="uid://dn6uoc18ol23k" path="res://Sprites/kenney_tiny-town/Tilemap/tilemap.png" id="1_ui5r5"]
 [ext_resource type="PackedScene" uid="uid://idw6ievt7oqk" path="res://Scenes/HomeBase.tscn" id="2_4eklg"]
+[ext_resource type="Script" path="res://Scenes/PlacementScript.gd" id="4_e5tm1"]
+[ext_resource type="Script" path="res://Scenes/CameraMoveScript.gd" id="4_hsmcj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6ylo"]
 texture = ExtResource("1_ui5r5")
@@ -157,3 +159,7 @@ position = Vector2(268, 159)
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+script = ExtResource("4_hsmcj")
+
+[node name="AllyPlanes" type="Node2D" parent="."]
+script = ExtResource("4_e5tm1")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxqcwpg3cudod"]
+
+[ext_resource type="Texture2D" uid="uid://bkfopj7vj5lxe" path="res://Sprites/kenney_pixel-shmup/Tiles/tile_0027.png" id="1_ibpus"]
+
+[node name="PlaneOriginPoint" type="Marker2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ibpus")
