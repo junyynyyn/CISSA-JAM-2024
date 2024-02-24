@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bqa05338fx3y5"]
 
 [node name="EnemyPlane" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 12
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cs0yhnoq0tpwu"]
 
 [ext_resource type="Texture2D" uid="uid://bjq53l7fc1eoj" path="res://Sprites/Custom/blue_side_shield.png" id="1_0g4et"]
-[ext_resource type="Script" path="res://Scenes/BaseShield.gd" id="1_vsghy"]
+[ext_resource type="Script" path="res://Scripts/Base/BaseShield.gd" id="1_vsghy"]
 [ext_resource type="Texture2D" uid="uid://ou03sclqhhav" path="res://Sprites/Custom/blue_circle_shield.png" id="2_obg00"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hg2f"]

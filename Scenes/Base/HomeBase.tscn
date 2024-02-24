@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://idw6ievt7oqk"]
 
-[ext_resource type="Script" path="res://Scenes/HomeBase.gd" id="1_hy3a4"]
+[ext_resource type="Script" path="res://Scripts/Base/HomeBase.gd" id="1_hy3a4"]
 [ext_resource type="Texture2D" uid="uid://dn6uoc18ol23k" path="res://Sprites/kenney_tiny-town/Tilemap/tilemap.png" id="1_vxeiv"]
 [ext_resource type="Texture2D" uid="uid://bwkjlmr5tcd32" path="res://Sprites/kenney_pattern-pack-2/PNG/Thin/Default (256px)/pattern_0024.png" id="3_3jxh0"]
-[ext_resource type="PackedScene" uid="uid://cs0yhnoq0tpwu" path="res://Scenes/BaseShield.tscn" id="4_sst0o"]
+[ext_resource type="PackedScene" uid="uid://cs0yhnoq0tpwu" path="res://Scenes/Base/BaseShield.tscn" id="4_sst0o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_873ls"]
 texture = ExtResource("1_vxeiv")
@@ -158,13 +158,16 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-3, 262145, 5, 65533, 262145, 6, 131069, 262145, 6, -2, 458753, 5, 65534, 262145, 7, 131070, 327681, 6, -1, 327681, 5, 65535, 327681, 6, 131071, 327681, 7, -65536, 458753, 5, 0, 262145, 7, 65536, 327681, 6, -65535, 327681, 5, 1, 327681, 6, 65537, 327681, 7, -65534, 458753, 5, 2, 262145, 7, 65538, 327681, 6, -65533, 393217, 5, 3, 458753, 6, 65539, 458753, 6, -65539, 262145, 4, -65538, 327681, 4, -65537, 327681, 4, -131072, 327681, 4, -131071, 327681, 4, -131070, 327681, 4, -131069, 393217, 4)
 
 [node name="Hitbox" type="Area2D" parent="." groups=["intersect_area"]]
-collision_mask = 3
+collision_layer = 4
+collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(8, 1)
 shape = SubResource("RectangleShape2D_ln4oj")
 
 [node name="PlacementArea" type="Area2D" parent="." groups=["placement_area"]]
+collision_layer = 16
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementArea"]
 shape = SubResource("CircleShape2D_pk662")
