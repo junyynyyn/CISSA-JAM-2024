@@ -6,9 +6,9 @@ extends PlayerPlane
 var bullet_scene = load("res://Scenes/PlayerBullet.tscn")
 @onready var attack_timer = $AttackTimer
 
-var LEVEL_1 = {"DAMAGE": 1.0, "ATTACK_SPEED": 0.5, "MOVE_SPEED": 75.0, "BULLET_COUNT": 4}
-var LEVEL_2 = {"DAMAGE": 2.5, "ATTACK_SPEED": 1.0, "MOVE_SPEED": 100.0, "BULLET_COUNT": 6}
-var LEVEL_3 = {"DAMAGE": 5.0, "ATTACK_SPEED": 1.5, "MOVE_SPEED": 125.0, "BULLET_COUNT": 8}
+var LEVEL = {1: {"DAMAGE": 1.0, "ATTACK_SPEED": 0.5, "MOVE_SPEED": 75.0, "BULLET_COUNT": 4, "TEXTURE": "res://Sprites/kenney_pixel-shmup/Ships/ship_0009.png"},\
+2: {"DAMAGE": 2.5, "ATTACK_SPEED": 1.0, "MOVE_SPEED": 100.0, "BULLET_COUNT": 6, "TEXTURE": "res://Sprites/kenney_pixel-shmup/Ships/ship_0005.png"},\
+3: {"DAMAGE": 5.0, "ATTACK_SPEED": 1.5, "MOVE_SPEED": 125.0, "BULLET_COUNT": 8, "TEXTURE": "res://Sprites/kenney_pixel-shmup/Ships/ship_0001.png"}}
 var BULLET_COUNT = 0
 
 func _ready():

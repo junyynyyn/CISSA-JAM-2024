@@ -32,15 +32,9 @@ func place_plane(scene, level, cost):
 	plane_instance.position = get_global_mouse_position()
 	add_child(plane_instance)
 	
-	var lvl
 	var plane_stat = plane_instance.get_children()[0]
-	match level:
-		1:
-			lvl = plane_stat.LEVEL_1
-		2:
-			lvl = plane_stat.LEVEL_2
-		3:
-			lvl = plane_stat.LEVEL_3
+	var lvl = plane_stat.LEVEL[1]
+	
 	plane_stat.DAMAGE = lvl["DAMAGE"]
 	plane_stat.ATTACK_SPEED = lvl["ATTACK_SPEED"]
 	plane_stat.MOVE_SPEED = lvl["MOVE_SPEED"]
@@ -50,5 +44,7 @@ func place_plane(scene, level, cost):
 	var plane_marker = point.instantiate()
 	plane_marker.position = get_global_mouse_position()
 	add_child(plane_marker)
+	plane_marker.plane_level = level
+	plane_marker.plane_colour = global.selected_plane.get_slice("PlaneButton", 0)
 	
 	global.money -= cost
