@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxqcwpg3cudod"]
+[gd_scene load_steps=4 format=3 uid="uid://dxqcwpg3cudod"]
 
 [ext_resource type="Texture2D" uid="uid://bkfopj7vj5lxe" path="res://Sprites/kenney_pixel-shmup/Tiles/tile_0027.png" id="1_1jg7x"]
+[ext_resource type="Script" path="res://Scripts/UI/PlanePoint.gd" id="1_nchhu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7kgjh"]
 size = Vector2(14, 14)
 
 [node name="PlaneOriginPoint" type="Marker2D"]
+script = ExtResource("1_nchhu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_1jg7x")
@@ -16,3 +18,16 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_7kgjh")
+
+[node name="UpgradePrice" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -33.0
+offset_right = 20.0
+offset_bottom = -10.0
+mouse_filter = 1
+text = "$600"
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="UpgradePrice" to="." method="_on_upgrade_price_mouse_entered"]
+[connection signal="mouse_exited" from="UpgradePrice" to="." method="_on_upgrade_price_mouse_exited"]
