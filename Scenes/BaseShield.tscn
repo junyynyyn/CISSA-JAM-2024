@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs0yhnoq0tpwu"]
+
+[ext_resource type="Texture2D" uid="uid://bjq53l7fc1eoj" path="res://Sprites/Custom/blue_side_shield.png" id="1_0g4et"]
+[ext_resource type="Script" path="res://Scenes/BaseShield.gd" id="1_vsghy"]
+[ext_resource type="Texture2D" uid="uid://ou03sclqhhav" path="res://Sprites/Custom/blue_circle_shield.png" id="2_obg00"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2hg2f"]
+radius = 36.0
+
+[node name="BaseShield" type="Node2D"]
+script = ExtResource("1_vsghy")
+
+[node name="BulletShield" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="BulletShield"]
+texture = ExtResource("1_0g4et")
+
+[node name="ShieldCollision" type="CollisionPolygon2D" parent="BulletShield"]
+polygon = PackedVector2Array(-36, 10, -25, -5, 0, -10, 25, -5, 36, 10)
+
+[node name="BombShield" type="Area2D" parent="."]
+
+[node name="ShieldCollision" type="CollisionShape2D" parent="BombShield"]
+shape = SubResource("CircleShape2D_2hg2f")
+
+[node name="Sprite2D" type="Sprite2D" parent="BombShield"]
+texture = ExtResource("2_obg00")
