@@ -11,7 +11,7 @@ var center = Vector2(200,200)
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	# Change this key
 	if Input.is_action_pressed("down"):
 		bomb_shield.show()
