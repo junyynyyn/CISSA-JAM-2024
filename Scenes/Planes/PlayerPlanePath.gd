@@ -19,13 +19,13 @@ func _ready():
 	
 	for i in NUM_POINTS:
 		if i <= NUM_POINTS * 0.25:
-			infinity_curve.add_point(Vector2(-SIZE/2, 0).rotated((i/float(NUM_POINTS)) * 2 * TAU))
+			infinity_curve.add_point(Vector2(-SIZE/2, 0).rotated((i/float(NUM_POINTS)) * 2 * TAU) - Vector2(SIZE/2, 0))
 		elif i <= NUM_POINTS * 0.5:
-			infinity_curve.add_point(Vector2(-SIZE/2, 0).rotated(deg_to_rad(540) - (i/float(NUM_POINTS)) * 2 * TAU) + Vector2(SIZE, 0))
+			infinity_curve.add_point(Vector2(-SIZE/2, 0).rotated(deg_to_rad(540) - (i/float(NUM_POINTS)) * 2 * TAU) + Vector2(SIZE/2, 0))
 		elif i<= NUM_POINTS * 0.75:
-			infinity_curve.add_point(Vector2(-SIZE/2, 0).rotated(deg_to_rad(180) - (i/float(NUM_POINTS)) * 2 * TAU) + Vector2(SIZE, 0))
+			infinity_curve.add_point(Vector2(-SIZE/2, 0).rotated(deg_to_rad(180) - (i/float(NUM_POINTS)) * 2 * TAU) + Vector2(SIZE/2, 0))
 		else:
-			infinity_curve.add_point(Vector2(-SIZE/2, 0).rotated((i/float(NUM_POINTS)) * 2 * TAU))
+			infinity_curve.add_point(Vector2(-SIZE/2, 0).rotated((i/float(NUM_POINTS)) * 2 * TAU) - Vector2(SIZE/2, 0))
 	infinity_curve.add_point(Vector2(-SIZE/2, 0))
 		
 	# Change starting curve here
