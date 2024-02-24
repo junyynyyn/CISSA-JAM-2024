@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://buq8n2bm72jkh"]
+[gd_scene load_steps=25 format=3 uid="uid://buq8n2bm72jkh"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_68hbw"]
 [ext_resource type="Texture2D" uid="uid://dn6uoc18ol23k" path="res://Sprites/kenney_tiny-town/Tilemap/tilemap.png" id="1_ui5r5"]
@@ -165,6 +165,12 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve2D" id="Curve2D_cfe6h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 266, 49, 0, 0, 0, 0, 339, 77, 0, 0, 0, 0, 368, 154, 0, 0, 0, 0, 346, 231, 0, 0, 0, 0, 269, 252, 0, 0, 0, 0, 189, 228, 0, 0, 0, 0, 160, 164, 0, 0, 0, 0, 188, 76, 0, 0, 0, 0, 266, 49)
+}
+point_count = 9
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1vn4"]
 size = Vector2(14, 14)
 
@@ -205,6 +211,9 @@ unique_name_in_owner = true
 position = Vector2(-211, -254)
 rotation = -0.00728585
 
+[node name="OrbitPath" type="Path2D" parent="EnemyPlanes"]
+curve = SubResource("Curve2D_cfe6h")
+
 [node name="MousePointer" type="Area2D" parent="."]
 visible = false
 collision_layer = 16
@@ -227,10 +236,8 @@ offset_bottom = 23.0
 text = "Wave: "
 
 [node name="ScoreLabel" type="Label" parent="UI"]
-offset_top = 30.0
 offset_right = 40.0
-offset_bottom = 53.0
-text = "Score:"
+offset_bottom = 23.0
 
 [node name="Money" type="Label" parent="UI"]
 anchors_preset = -1

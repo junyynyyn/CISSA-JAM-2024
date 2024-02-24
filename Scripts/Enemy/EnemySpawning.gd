@@ -7,7 +7,7 @@ var basic_plane_boss = load("res://Scenes/EnemyPlanes/BasicEnemyPlaneBoss.tscn")
 signal wave_clear
 
 func spawn_wave(wave):
-	for i in wave % 10:
+	for i in wave:
 		%SpawnPoint.progress_ratio = randf()
 		var plane = basic_plane.instantiate()
 		plane.global_position = %SpawnPoint.global_position
