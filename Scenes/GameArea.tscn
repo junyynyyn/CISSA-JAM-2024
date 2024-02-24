@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://buq8n2bm72jkh"]
 
 [ext_resource type="Texture2D" uid="uid://dn6uoc18ol23k" path="res://Sprites/kenney_tiny-town/Tilemap/tilemap.png" id="1_ui5r5"]
-[ext_resource type="PackedScene" uid="uid://idw6ievt7oqk" path="res://Scenes/HomeBase.tscn" id="2_4eklg"]
+[ext_resource type="PackedScene" uid="uid://bqokpvsbgjqcf" path="res://Scenes/HomeBase.tscn" id="2_4eklg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6ylo"]
 texture = ExtResource("1_ui5r5")
