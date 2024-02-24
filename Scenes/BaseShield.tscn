@@ -13,15 +13,21 @@ script = ExtResource("1_vsghy")
 [node name="BulletShield" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="BulletShield"]
+self_modulate = Color(1, 1, 1, 0.588235)
+scale = Vector2(2, 2)
 texture = ExtResource("1_0g4et")
 
 [node name="ShieldCollision" type="CollisionPolygon2D" parent="BulletShield"]
+scale = Vector2(2, 2)
 polygon = PackedVector2Array(-36, 10, -25, -5, 0, -10, 25, -5, 36, 10)
 
 [node name="BombShield" type="Area2D" parent="."]
 
 [node name="ShieldCollision" type="CollisionShape2D" parent="BombShield"]
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_2hg2f")
 
 [node name="Sprite2D" type="Sprite2D" parent="BombShield"]
+self_modulate = Color(1, 1, 1, 0.588235)
+scale = Vector2(2, 2)
 texture = ExtResource("2_obg00")

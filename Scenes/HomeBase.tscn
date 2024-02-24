@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://idw6ievt7oqk"]
+[gd_scene load_steps=9 format=3 uid="uid://idw6ievt7oqk"]
 
 [ext_resource type="Script" path="res://Scenes/HomeBase.gd" id="1_hy3a4"]
 [ext_resource type="Texture2D" uid="uid://dn6uoc18ol23k" path="res://Sprites/kenney_tiny-town/Tilemap/tilemap.png" id="1_vxeiv"]
 [ext_resource type="Texture2D" uid="uid://bwkjlmr5tcd32" path="res://Sprites/kenney_pattern-pack-2/PNG/Thin/Default (256px)/pattern_0024.png" id="3_3jxh0"]
+[ext_resource type="PackedScene" uid="uid://cs0yhnoq0tpwu" path="res://Scenes/BaseShield.tscn" id="4_sst0o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_873ls"]
 texture = ExtResource("1_vxeiv")
@@ -172,6 +173,8 @@ shape = SubResource("CircleShape2D_pk662")
 modulate = Color(1, 1, 1, 0.392157)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_3jxh0")
+
+[node name="BaseShield" parent="." instance=ExtResource("4_sst0o")]
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
