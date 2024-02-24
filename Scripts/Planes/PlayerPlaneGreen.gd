@@ -20,11 +20,12 @@ func _physics_process(delta):
 		shoot_bullet()
 
 func shoot_bullet():
-	var clone = bullet_scene.instantiate()
-	var scene_root = get_tree().root.get_children()[0]
-	scene_root.add_child(clone)
-	
-	clone.position = global_position
-	clone.rotation = rotation
-	clone.DAMAGE = DAMAGE
-	
+	if ($TargetArea.get_overlapping_bodies()):
+		var clone = bullet_scene.instantiate()
+		var scene_root = get_tree().root.get_children()[0]
+		scene_root.add_child(clone)
+
+		clone.position = global_position
+		var target = $TargetArea.get_overlapping_bodies()[0]
+		clone.look_at(target.global_position)
+		clone.DAMAGE = DAMAGE

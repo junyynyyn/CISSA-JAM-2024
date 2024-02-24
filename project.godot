@@ -61,6 +61,14 @@ right={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player_planes"
+2d_physics/layer_2="enemy_planes"
+2d_physics/layer_3="player_base"
+2d_physics/layer_4="bullets"
+2d_physics/layer_5="ui"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

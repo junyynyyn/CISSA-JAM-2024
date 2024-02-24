@@ -24,4 +24,4 @@ func _on_hitbox_area_entered(area):
 func _on_hitbox_body_entered(body):
 	if (body.is_in_group("enemy_projectile")):
 		damage(body.DAMAGE)
-		body.die()
+		body.queue_free()

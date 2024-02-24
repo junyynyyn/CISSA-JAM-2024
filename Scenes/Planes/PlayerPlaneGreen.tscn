@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://08qkdxbyd8mo"]
+[gd_scene load_steps=5 format=3 uid="uid://b5vkjo748p062"]
 
 [ext_resource type="Script" path="res://Scripts/Planes/PlayerPlanePath.gd" id="1_m3otl"]
 [ext_resource type="Script" path="res://Scripts/Planes/PlayerPlaneGreen.gd" id="2_hg53q"]
 [ext_resource type="Texture2D" uid="uid://3l1e0kdjwaan" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0010.png" id="3_fp18x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5n43"]
+radius = 150.0
 
 [node name="PlayerPlanePath" type="Path2D"]
 script = ExtResource("1_m3otl")
@@ -18,3 +21,9 @@ rotation = 1.5708
 
 [node name="AttackTimer" type="Timer" parent="PlayerPlane"]
 one_shot = true
+
+[node name="TargetArea" type="Area2D" parent="PlayerPlane"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPlane/TargetArea"]
+shape = SubResource("CircleShape2D_j5n43")

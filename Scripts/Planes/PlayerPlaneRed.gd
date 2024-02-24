@@ -21,6 +21,8 @@ func _physics_process(delta):
 		shoot_bullet()
 
 func shoot_bullet():
+	if ($TargetArea.has_overlapping_bodies()):
+		look_at($TargetArea.get_overlapping_bodies()[0].position)
 	for i in range(BULLET_COUNT):
 		var clone = bullet_scene.instantiate()
 		var scene_root = get_tree().root.get_children()[0]
