@@ -1,6 +1,8 @@
 extends Node2D
 
 var blue_plane = load("res://Scenes/Planes/PlayerPlaneBlue.tscn")
+var red_plane = load("res://Scenes/Planes/PlayerPlaneRed.tscn")
+var green_plane = load("res://Scenes/Planes/PlayerPlaneGreen.tscn")
 var point = load("res://Scenes/UI/PlanePoint.tscn")
 
 func _process(delta):
@@ -11,7 +13,10 @@ func _process(delta):
 					place_plane(blue_plane, 1, 100)
 			"RedPlaneButton":
 				if (global.money >= 200):
-					print("Spawning red plane")
+					place_plane(red_plane, 1, 200)
+			"GreenPlaneButton":
+				if (global.money >= 200):
+					place_plane(green_plane, 1, 200)
 		
 		global.plane_selector.reset()
 		global.selected_plane = ""
@@ -39,6 +44,8 @@ func place_plane(scene, level, cost):
 	plane_stat.DAMAGE = lvl["DAMAGE"]
 	plane_stat.ATTACK_SPEED = lvl["ATTACK_SPEED"]
 	plane_stat.MOVE_SPEED = lvl["MOVE_SPEED"]
+	if scene == red_plane:
+		plane_stat.BULLET_COUNT = lvl["BULLET_COUNT"]
 	
 	var plane_marker = point.instantiate()
 	plane_marker.position = get_global_mouse_position()

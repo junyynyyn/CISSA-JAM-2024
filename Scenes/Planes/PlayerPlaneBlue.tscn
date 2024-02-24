@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Planes/PlayerPlanePath.gd" id="1_f4npi"]
 [ext_resource type="Script" path="res://Scripts/Planes/PlayerPlaneBlue.gd" id="2_ywhd0"]
-[ext_resource type="Texture2D" uid="uid://do13at6ka8jrl" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0000.png" id="3_s8h2n"]
+[ext_resource type="Texture2D" uid="uid://br1e2lmys2st7" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0008.png" id="3_e6vku"]
 
 [node name="PlayerPlanePath" type="Path2D"]
 script = ExtResource("1_f4npi")
@@ -10,7 +10,7 @@ script = ExtResource("1_f4npi")
 [node name="PlayerPlane" type="PathFollow2D" parent="."]
 position = Vector2(-10, 0)
 script = ExtResource("2_ywhd0")
-TEXTURE = ExtResource("3_s8h2n")
+TEXTURE = ExtResource("3_e6vku")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerPlane"]
 texture_filter = 1

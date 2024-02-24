@@ -3,12 +3,12 @@ extends PlayerPlane
 @onready var sprite := $Sprite2D
 @export var TEXTURE: Texture2D
 
-var bullet_scene = load("res://Scenes/PlayerBullet.tscn")
+var bullet_scene = load("res://Scenes/PlayerBomb.tscn")
 @onready var attack_timer = $AttackTimer
 
-var LEVEL_1 = {"DAMAGE": 1.0, "ATTACK_SPEED": 1.0, "MOVE_SPEED": 100.0}
-var LEVEL_2 = {"DAMAGE": 3.0, "ATTACK_SPEED": 2.5, "MOVE_SPEED": 150.0}
-var LEVEL_3 = {"DAMAGE": 6.0, "ATTACK_SPEED": 4.0, "MOVE_SPEED": 200.0}
+var LEVEL_1 = {"DAMAGE": 2.0, "ATTACK_SPEED": 0.5, "MOVE_SPEED": 50.0}
+var LEVEL_2 = {"DAMAGE": 4.0, "ATTACK_SPEED": 1.0, "MOVE_SPEED": 60.0}
+var LEVEL_3 = {"DAMAGE": 7.0, "ATTACK_SPEED": 1.5, "MOVE_SPEED": 75.0}
 
 func _ready():
 	sprite.texture = TEXTURE

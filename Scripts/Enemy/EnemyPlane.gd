@@ -10,9 +10,9 @@ var health
 
 signal defeated
 
-func damage(damage: int):
+func damage(dmg: int):
 	print("Hit!")
-	health -= damage
+	health -= dmg
 	if (health <= 0):
 		die()
 
