@@ -13,8 +13,8 @@ func _ready():
 func _process(delta):
 	pass
 	
-func damage(damage: int):
-	hp -= damage
+func damage(dmg: int):
+	hp -= dmg
 	%HealthBar.value = hp
 
 func _on_hitbox_area_entered(area):

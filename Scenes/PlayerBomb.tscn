@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://b65vt27xn3f6u"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerBomb.gd" id="1_l4unw"]
+[ext_resource type="Texture2D" uid="uid://bfaatrkrsiqvn" path="res://Sprites/kenney_pixel-shmup/Tiles/tile_0012.png" id="2_68g5f"]
+[ext_resource type="Texture2D" uid="uid://b2llh5gd2utw1" path="res://Sprites/kenney_pixel-shmup/Tiles/tile_0006.png" id="3_7fybh"]
+[ext_resource type="Texture2D" uid="uid://cuppwe53af6ns" path="res://Sprites/kenney_pixel-shmup/Tiles/tile_0005.png" id="4_iuc1e"]
+[ext_resource type="Texture2D" uid="uid://b6i418afl5r85" path="res://Sprites/kenney_pixel-shmup/Tiles/tile_0007.png" id="5_44rod"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jo36h"]
+size = Vector2(14, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pr225"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_68g5f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7fybh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iuc1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_44rod")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50ks8"]
+radius = 19.0
+
+[node name="Bomb" type="StaticBody2D"]
+z_index = 1
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_l4unw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jo36h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pr225")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, 0)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_50ks8")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="collided"]

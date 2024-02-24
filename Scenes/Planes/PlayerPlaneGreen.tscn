@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://08qkdxbyd8mo"]
+
+[ext_resource type="Script" path="res://Scripts/Planes/PlayerPlanePath.gd" id="1_m3otl"]
+[ext_resource type="Script" path="res://Scripts/Planes/PlayerPlaneGreen.gd" id="2_hg53q"]
+[ext_resource type="Texture2D" uid="uid://3l1e0kdjwaan" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0010.png" id="3_fp18x"]
+
+[node name="PlayerPlanePath" type="Path2D"]
+script = ExtResource("1_m3otl")
+
+[node name="PlayerPlane" type="PathFollow2D" parent="."]
+position = Vector2(-10, 0)
+script = ExtResource("2_hg53q")
+TEXTURE = ExtResource("3_fp18x")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerPlane"]
+texture_filter = 1
+rotation = 1.5708
+
+[node name="AttackTimer" type="Timer" parent="PlayerPlane"]
+one_shot = true
