@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bqa05338fx3y5"]
+
+[node name="EnemyPlane" type="CharacterBody2D"]
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="FirePoints" type="Node2D" parent="."]
+
+[node name="Hitbox2" type="Area2D" parent="."]

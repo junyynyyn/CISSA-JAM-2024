@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://buq8n2bm72jkh"]
+[gd_scene load_steps=23 format=3 uid="uid://buq8n2bm72jkh"]
 
 [ext_resource type="Script" path="res://Scenes/Game.gd" id="1_68hbw"]
 [ext_resource type="Texture2D" uid="uid://dn6uoc18ol23k" path="res://Sprites/kenney_tiny-town/Tilemap/tilemap.png" id="1_ui5r5"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://br1e2lmys2st7" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0008.png" id="9_vs3sc"]
 [ext_resource type="Texture2D" uid="uid://3l1e0kdjwaan" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0010.png" id="11_kn65q"]
 [ext_resource type="Texture2D" uid="uid://c7t8n5t2pkkk7" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0011.png" id="12_l3sow"]
+[ext_resource type="PackedScene" uid="uid://brojun578o3w6" path="res://Scenes/EnemyPlanes/BasicEnemyPlane.tscn" id="16_777j6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6ylo"]
 texture = ExtResource("1_ui5r5")
@@ -180,10 +181,6 @@ position = Vector2(266, 158)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(268, 159)
 zoom = Vector2(1.5, 1.5)
-limit_left = -500
-limit_top = -500
-limit_right = 1000
-limit_bottom = 800
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("4_hsmcj")
@@ -194,11 +191,13 @@ script = ExtResource("4_e5tm1")
 [node name="EnemyPlanes" type="Node2D" parent="."]
 script = ExtResource("6_i4kkq")
 
+[node name="EnemyPlane" parent="EnemyPlanes" instance=ExtResource("16_777j6")]
+position = Vector2(-165, 517)
+
 [node name="EnemyPlaneSpawner" type="Path2D" parent="EnemyPlanes"]
 curve = SubResource("Curve2D_3bfa2")
 
-[node name="SpawnPoint" type="PathFollow2D" parent="EnemyPlanes/EnemyPlaneSpawner"]
-unique_name_in_owner = true
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemyPlanes/EnemyPlaneSpawner"]
 position = Vector2(-211, -254)
 rotation = -0.00728585
 
@@ -320,6 +319,5 @@ offset_right = 44.0
 offset_bottom = 74.0
 text = "$300"
 
-[connection signal="plane_defeated" from="EnemyPlanes" to="." method="_on_enemy_planes_plane_defeated"]
 [connection signal="area_entered" from="MousePointer" to="MousePointer" method="_on_area_entered"]
 [connection signal="area_exited" from="MousePointer" to="MousePointer" method="_on_area_exited"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://brojun578o3w6"]
+
+[ext_resource type="PackedScene" uid="uid://bqa05338fx3y5" path="res://Scenes/EnemyPlanes/EnemyPlane.tscn" id="1_bwes1"]
+[ext_resource type="Texture2D" uid="uid://domrcmjmldtaj" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0020.png" id="2_bxfju"]
+[ext_resource type="Script" path="res://Scenes/EnemyPlanes/BasicEnemyAI.gd" id="2_jxb34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhbwe"]
+size = Vector2(14, 26)
+
+[node name="EnemyPlane" instance=ExtResource("1_bwes1")]
+script = ExtResource("2_jxb34")
+SPEED = null
+
+[node name="Hitbox" parent="." index="0"]
+shape = SubResource("RectangleShape2D_nhbwe")
+
+[node name="Sprite2D" parent="." index="1"]
+rotation = 1.5708
+texture = ExtResource("2_bxfju")

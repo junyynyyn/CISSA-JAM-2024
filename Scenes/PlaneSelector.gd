@@ -8,6 +8,7 @@ func _ready():
 		button.pressed.connect(_on_button_pressed.bind(button))
 
 func _on_button_pressed(button):
+	global.mouse.placing = true
 	global.selected_plane = button.name
 
 func reset():

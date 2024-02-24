@@ -23,7 +23,9 @@ func _process(delta):
 		
 		global.plane_selector.reset()
 		global.selected_plane = ""
+		global.mouse.placing = false
 		
 	if (Input.is_action_just_pressed("cancel")):
 		global.plane_selector.reset()
 		global.selected_plane = ""
+		global.mouse.placing = false

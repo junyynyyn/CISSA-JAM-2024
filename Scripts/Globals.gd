@@ -1,8 +1,11 @@
 extends Node
 
 var mouse
-var money
 var plane_selector
+var base
+
+var wave
+var money
 
 var selected_plane = 0
 
