@@ -41,7 +41,7 @@ func _on_area_2d_mouse_exited():
 
 
 func _input(event):
-	if Input.is_action_pressed("place"):
+	if Input.is_action_pressed("place") and mouse_overlap:
 		if plane_level < MAX_LEVEL:
 			if global.money >= UPGRADE_PRICE[plane_colour + str(plane_level)]:
 				global.money -= UPGRADE_PRICE[plane_colour + str(plane_level)]
