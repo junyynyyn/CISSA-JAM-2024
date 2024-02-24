@@ -1,6 +1,7 @@
 extends EnemyPlane
 
 var target: Vector2
+var bullet_scene = load("res://Scenes/EnemyPlanes/EnemyBullet.tscn")
 
 func _ready():
 	MAX_HEALTH = 2

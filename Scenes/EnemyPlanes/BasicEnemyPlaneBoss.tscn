@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://xm2whvkgfwdo"]
+
+[ext_resource type="PackedScene" uid="uid://bqa05338fx3y5" path="res://Scenes/EnemyPlanes/EnemyPlane.tscn" id="1_ycdba"]
+[ext_resource type="Texture2D" uid="uid://d8u6bq4vmjr0" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0015.png" id="2_kn0uk"]
+[ext_resource type="Script" path="res://Scripts/Enemy/BasicEnemyPlaneBoss.gd" id="2_no7q0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3eesk"]
+radius = 9.0
+height = 44.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk4te"]
+size = Vector2(62, 44)
+
+[node name="EnemyPlane" instance=ExtResource("1_ycdba")]
+script = ExtResource("2_no7q0")
+
+[node name="Hitbox" parent="." index="0"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3eesk")
+
+[node name="Sprite2D" parent="." index="1"]
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_kn0uk")
+
+[node name="Hitbox2" parent="." index="3"]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox2" index="0"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_tk4te")
+
+[node name="AttackTimer" type="Timer" parent="." index="4"]
+autostart = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

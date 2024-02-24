@@ -10,5 +10,5 @@ var money
 var selected_plane = 0
 
 func _ready():
-	wave = 0
+	wave = 1
 	money = 1000

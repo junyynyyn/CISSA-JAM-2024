@@ -17,7 +17,6 @@ func _physics_process(delta):
 		queue_free()
 	position += Vector2(1, 0).rotated(rotation) * SPEED * delta
 
-
 func collided(body):
 	if hit_something == false:
 		if (body.is_in_group("enemy_plane")):
