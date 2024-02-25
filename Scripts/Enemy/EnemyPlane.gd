@@ -30,4 +30,5 @@ func fire(angle):
 func die():
 	defeated.emit()
 	global.money += REWARD
+	global.score += 1
 	queue_free()

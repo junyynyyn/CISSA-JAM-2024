@@ -6,6 +6,7 @@ func _ready():
 	get_tree().paused = true
 	Engine.time_scale = 2.0
 	start_wave()
+	$BG_Music.play()
 
 func _process(delta):
 	if global.base.hp <= 0:
@@ -24,3 +25,7 @@ func _on_texture_button_button_down():
 	$HomeBase.visible = true
 	$MousePointer.visible = true
 	$PlayMenu.visible = false
+
+
+func _on_bg_music_finished():
+	$BG_Music.play()
