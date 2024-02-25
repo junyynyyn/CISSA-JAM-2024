@@ -4,7 +4,7 @@ extends Path2D
 const SIZE = 100.0
 # Number of points to mimic circle
 # More points -> smoother turning but might be more resource intensive
-const NUM_POINTS = 50
+const NUM_POINTS = 100
 
 var circle_curve = Curve2D.new()
 #var eight_curve = Curve2D.new()

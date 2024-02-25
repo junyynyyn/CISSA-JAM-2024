@@ -18,6 +18,7 @@ TEXTURE = ExtResource("3_e6vku")
 [node name="Sprite2D" type="Sprite2D" parent="PlayerPlane"]
 texture_filter = 1
 rotation = 1.5708
+texture = ExtResource("3_e6vku")
 
 [node name="AttackTimer" type="Timer" parent="PlayerPlane"]
 one_shot = true

@@ -32,16 +32,27 @@ func set_label():
 			$UpgradePrice.remove_theme_color_override("font_color")
 
 
+func set_highlight(change: bool):
+	var plane_sprite = get_parent().get_child(get_parent().get_children().find(self) - 1).get_child(0).get_child(0)
+	if change:
+		plane_sprite.material = load("res://Scripts/Planes/Outline.tres")
+	else:
+		plane_sprite.material = null
+	
+
+
 func _on_area_2d_mouse_entered():
 	mouse_overlap = true
 	await get_tree().create_timer(0.5).timeout
 	if mouse_overlap:
 		set_label()
+		set_highlight(true)
 
 
 func _on_area_2d_mouse_exited():
 	mouse_overlap = false
 	$UpgradePrice.hide()
+	set_highlight(false)
 
 
 func _input(_event):
