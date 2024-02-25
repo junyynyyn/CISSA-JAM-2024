@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b58fpmjn1buuf"
+path="res://.godot/imported/At Launch.mp3-16a9adca7df2a8454582c36b9e39d707.mp3str"
+
+[deps]
+
+source_file="res://Audio/At Launch.mp3"
+dest_files=["res://.godot/imported/At Launch.mp3-16a9adca7df2a8454582c36b9e39d707.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3wj1e2d08mct"
+path="res://.godot/imported/Bit Quest.mp3-8043f52779ac4ee62298282bb128674b.mp3str"
+
+[deps]
+
+source_file="res://Sprites/kenney_tiny-town/Tilemap/Bit Quest.mp3"
+dest_files=["res://.godot/imported/Bit Quest.mp3-8043f52779ac4ee62298282bb128674b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
