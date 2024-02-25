@@ -549,3 +549,4 @@ stream = ExtResource("24_nfo4o")
 [connection signal="pressed" from="UI/NextWave" to="." method="_on_next_wave_pressed"]
 [connection signal="button_down" from="UI/FastForward" to="." method="_on_fast_forward_pressed"]
 [connection signal="start_game" from="StartScreen" to="." method="_on_texture_button_button_down"]
+[connection signal="finished" from="BG_Music" to="." method="_on_bg_music_finished"]

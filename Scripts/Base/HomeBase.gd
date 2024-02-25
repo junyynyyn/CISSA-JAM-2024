@@ -6,10 +6,10 @@ var money
 var hp_wave = 0.0 # Amount of HP to heal after each wave.
 var mouse_overlap = false
 
-var LEVEL = {1: {"MAX_HEALTH": 800.0, "HP_WAVE": 0.0, "UPGRADE_PRICE": 600, "PLACEABLE_RADIUS": 180, "PLACEMENT_SCALE": 1.5},\
-2: {"MAX_HEALTH": 1000.0, "HP_WAVE": 3.0, "UPGRADE_PRICE": 1000, "PLACEABLE_RADIUS": 300, "PLACEMENT_SCALE": 2.5},\
-3: {"MAX_HEALTH": 1200.0, "HP_WAVE": 6.0, "UPGRADE_PRICE": 1600, "PLACEABLE_RADIUS": 400, "PLACEMENT_SCALE": 3.3},\
-4: {"MAX_HEALTH": 1600.0, "HP_WAVE": 10.0, "UPGRADE_PRICE": 2400, "PLACEABLE_RADIUS": 500, "PLACEMENT_SCALE": 4.2}}
+var LEVEL = {1: {"MAX_HEALTH": 800.0, "HP_WAVE": 50.0, "UPGRADE_PRICE": 600, "PLACEABLE_RADIUS": 180, "PLACEMENT_SCALE": 1.5},\
+2: {"MAX_HEALTH": 1000.0, "HP_WAVE": 100.0, "UPGRADE_PRICE": 1000, "PLACEABLE_RADIUS": 300, "PLACEMENT_SCALE": 2.5},\
+3: {"MAX_HEALTH": 1200.0, "HP_WAVE": 150.0, "UPGRADE_PRICE": 1600, "PLACEABLE_RADIUS": 400, "PLACEMENT_SCALE": 3.3},\
+4: {"MAX_HEALTH": 1600.0, "HP_WAVE": 200.0, "UPGRADE_PRICE": 2400, "PLACEABLE_RADIUS": 500, "PLACEMENT_SCALE": 4.2}}
 var base_level = 1
 
 func _ready():
@@ -70,7 +70,6 @@ func _input(_event):
 				base_level += 1
 				set_price_label(base_level)
 				upgrade_base(base_level)
-
 
 func upgrade_base(level):
 	MAX_HEALTH = LEVEL[level]["MAX_HEALTH"]
