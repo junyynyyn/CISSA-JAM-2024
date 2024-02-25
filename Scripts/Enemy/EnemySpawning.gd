@@ -15,8 +15,10 @@ var plane_bomb_2 = load("res://Scenes/EnemyPlanes/EnemyPlaneBomb2.tscn")
 var plane_bomb_boss = load("res://Scenes/EnemyPlanes/EnemyPlaneBombBoss.tscn")
 
 signal wave_clear
+var wave_ongoing = false
 
 func spawn_wave(wave):
+	wave_ongoing = true
 	for i in wave:
 		%SpawnPoint.progress_ratio = randf()
 		var plane = basic_plane.instantiate()
@@ -129,5 +131,6 @@ func spawn_wave(wave):
 		add_child(plane)
 
 func _process(delta):
-	if (get_child_count() == 1):
+	if (wave_ongoing and get_child_count() == 1):
 		wave_clear.emit()
+		wave_ongoing = false
