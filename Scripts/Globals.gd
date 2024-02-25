@@ -16,6 +16,6 @@ var selected_plane = 0
 func _ready():
 	wave = 1
 	score = 0
-	money = 1000
+	money = 500
 	multiplier = 1.0
 

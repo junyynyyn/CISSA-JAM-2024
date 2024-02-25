@@ -169,13 +169,15 @@ shape = SubResource("RectangleShape2D_ln4oj")
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementArea"]
-shape = SubResource("CircleShape2D_pk662")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PlacementSprite" type="Sprite2D" parent="PlacementArea"]
+unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.392157)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_3jxh0")
+
+[node name="PlacementCircle" type="CollisionShape2D" parent="PlacementArea"]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_pk662")
 
 [node name="BaseShield" parent="." instance=ExtResource("4_sst0o")]
 
