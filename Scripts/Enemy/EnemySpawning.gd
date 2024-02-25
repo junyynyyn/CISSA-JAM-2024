@@ -130,7 +130,7 @@ func spawn_wave(wave):
 		plane.global_position = %SpawnPoint.global_position
 		add_child(plane)
 
-func _process(delta):
+func _process(_delta):
 	if (wave_ongoing and get_child_count() == 1):
 		wave_ongoing = false
 		wave_clear.emit()

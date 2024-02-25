@@ -8,9 +8,11 @@ func _ready():
 	Engine.time_scale = 1.0
 	$BG_Music.play()
 
-func _process(delta):
+func _process(_delta):
 	if global.base.hp <= 0:
-		get_tree().reload_current_scene()
+		$DeathScreen.set_values(global.wave,global.score)
+		$DeathScreen.visible = true
+		get_tree().paused = true
 
 
 func start_wave():
@@ -18,11 +20,9 @@ func start_wave():
 	wave_ongoing = true
 
 func _on_enemy_planes_wave_clear():
-	print("Wave " + str(global.wave) + "Clear")
 	global.wave += 1
 	wave_ongoing = false
 	if (continous_waves):
-		print("spawning wave")
 		start_wave()
 
 func _on_texture_button_button_down():

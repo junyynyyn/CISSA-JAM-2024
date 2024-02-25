@@ -7,7 +7,7 @@ var intersecting = false
 func _ready():
 	global.mouse = self
 
-func _process(delta):
+func _process(_delta):
 	position = get_global_mouse_position()
 	for area in get_overlapping_areas():
 		if (area.is_in_group("placement_area")):

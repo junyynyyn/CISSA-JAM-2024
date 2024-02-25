@@ -12,7 +12,7 @@ func _ready():
 	health = MAX_HEALTH
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var target = path.pathpoint.global_position
 	var direction = (target - position).normalized()
 	look_at(target)

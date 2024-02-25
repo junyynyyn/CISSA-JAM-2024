@@ -20,7 +20,7 @@ func _ready():
 	
 	$UpgradePrice.hide()
 	
-func _process(delta):
+func _process(_delta):
 	pass
 	
 func damage(dmg: int):
@@ -63,7 +63,7 @@ func _on_hitbox_mouse_exited():
 	mouse_overlap = false
 	$UpgradePrice.hide()
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("place"):
 		if mouse_overlap:
 			if global.money >= LEVEL[base_level]["UPGRADE_PRICE"]:

@@ -6,7 +6,7 @@ var green_plane = load("res://Scenes/Planes/PlayerPlaneGreen.tscn")
 var yellow_plane = load("res://Scenes/Planes/PlayerPlaneYellow.tscn")
 var point = load("res://Scenes/UI/PlanePoint.tscn")
 
-func _process(delta):
+func _process(_delta):
 	if (Input.is_action_just_pressed("place") and global.mouse.placeable and !global.mouse.intersecting):
 		match global.selected_plane:
 			"BluePlaneButton":

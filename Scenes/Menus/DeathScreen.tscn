@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://djvbsc1d6q1p7"]
+
+[ext_resource type="Texture2D" uid="uid://dhgfhe7ae35np" path="res://Sprites/kenney_ui-pack/PNG/grey_button14.png" id="1_hdymv"]
+[ext_resource type="Script" path="res://Scenes/Menus/DeathScreen.gd" id="1_nxmxk"]
+
+[node name="DeathScreen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_nxmxk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.541176)
+offset_left = 310.0
+offset_top = 106.0
+offset_right = 859.0
+offset_bottom = 441.0
+color = Color(0.439216, 0.439216, 0.439216, 1)
+
+[node name="GAMEOVER" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -193.0
+offset_right = 143.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Waves" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -122.0
+offset_right = 143.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wave Reached:"
+
+[node name="Score" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -90.0
+offset_right = 4.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score:"
+
+[node name="TryAgain" type="TextureButton" parent="."]
+offset_left = 330.0
+offset_top = 366.0
+offset_right = 520.0
+offset_bottom = 415.0
+texture_normal = ExtResource("1_hdymv")
+
+[node name="Label" type="Label" parent="TryAgain"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 57.0
+offset_top = 9.0
+offset_right = 130.0
+offset_bottom = 32.0
+text = "Try Again"
+horizontal_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="."]
+offset_left = 642.0
+offset_top = 369.0
+offset_right = 832.0
+offset_bottom = 418.0
+texture_normal = ExtResource("1_hdymv")
+
+[node name="Label" type="Label" parent="Quit"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 51.0
+offset_top = 8.0
+offset_right = 124.0
+offset_bottom = 31.0
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://buq8n2bm72jkh"]
+[gd_scene load_steps=30 format=3 uid="uid://buq8n2bm72jkh"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_68hbw"]
 [ext_resource type="Texture2D" uid="uid://dn6uoc18ol23k" path="res://Sprites/kenney_tiny-town/Tilemap/tilemap.png" id="1_ui5r5"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://blkiq48j8mffu" path="res://Sprites/kenney_ui-pack/PNG/grey_button00.png" id="19_u4i7y"]
 [ext_resource type="AudioStream" uid="uid://cmjby1x7ra6ub" path="res://Audio/Cartoon Battle.mp3" id="20_0fpiu"]
 [ext_resource type="PackedScene" uid="uid://c7oicrpa78ubl" path="res://Scenes/UI/manual_ui.tscn" id="21_02d22"]
+[ext_resource type="PackedScene" uid="uid://djvbsc1d6q1p7" path="res://Scenes/Menus/DeathScreen.tscn" id="24_dsfq5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6ylo"]
 texture = ExtResource("1_ui5r5")
@@ -260,7 +261,7 @@ offset_right = 21.5
 offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Continous Waves: True"
+text = "Continous Waves: False"
 
 [node name="FastForward" type="TextureButton" parent="UI"]
 anchors_preset = 3
@@ -455,6 +456,9 @@ offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Start Game"
+
+[node name="DeathScreen" parent="." instance=ExtResource("24_dsfq5")]
+visible = false
 
 [node name="BG_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_0fpiu")

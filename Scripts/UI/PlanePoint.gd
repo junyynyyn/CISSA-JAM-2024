@@ -16,7 +16,7 @@ func _ready():
 	$UpgradePrice.hide()
 
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -44,7 +44,7 @@ func _on_area_2d_mouse_exited():
 	$UpgradePrice.hide()
 
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_pressed("place") and mouse_overlap:
 		if UPGRADE_PRICE.has(plane_colour + str(plane_level)):
 			if global.money >= UPGRADE_PRICE[plane_colour + str(plane_level)]:

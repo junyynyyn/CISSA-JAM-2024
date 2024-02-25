@@ -12,7 +12,7 @@ func _ready():
 	target = global.base.position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	look_at(target)
 	var direction = (target - position).normalized()
 	velocity = direction * SPEED
