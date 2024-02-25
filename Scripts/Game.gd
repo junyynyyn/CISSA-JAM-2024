@@ -39,7 +39,6 @@ func _on_next_wave_pressed():
 		continous_waves = !continous_waves
 		$UI.continous(continous_waves)
 
-
 func _on_bg_music_finished():
 	$BG_Music.play()
 
