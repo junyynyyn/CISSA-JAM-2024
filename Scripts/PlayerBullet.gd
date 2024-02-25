@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-const SPEED := 600.0
+var SPEED := 600.0
 
 # Treat as const within this script. This will be changed outside of the script
 # by whatever summoned a bullet

@@ -3,6 +3,7 @@ extends Node2D
 var blue_plane = load("res://Scenes/Planes/PlayerPlaneBlue.tscn")
 var red_plane = load("res://Scenes/Planes/PlayerPlaneRed.tscn")
 var green_plane = load("res://Scenes/Planes/PlayerPlaneGreen.tscn")
+var yellow_plane = load("res://Scenes/Planes/PlayerPlaneYellow.tscn")
 var point = load("res://Scenes/UI/PlanePoint.tscn")
 
 func _process(delta):
@@ -17,6 +18,9 @@ func _process(delta):
 			"GreenPlaneButton":
 				if (global.money >= 200):
 					place_plane(green_plane, 1, 200)
+			"YellowPlaneButton":
+				if (global.money >= 300):
+					place_plane(yellow_plane, 1, 300)
 		
 		global.plane_selector.reset()
 		global.selected_plane = ""

@@ -2,7 +2,11 @@ extends Marker2D
 
 const MAX_LEVEL = 3
 
-var UPGRADE_PRICE = {"Blue1": 500, "Blue2": 1000, "Red1": 600, "Red2": 1300, "Green1": 600, "Green2": 1200}
+var UPGRADE_PRICE = {"Blue1": 300, "Blue2": 400,\
+"Red1": 350, "Red2": 500,\
+"Green1": 350, "Green2": 600,\
+"Yellow1": 400, "Yellow2": 750}
+
 var plane_colour = "Blue"
 var plane_level = 1
 
@@ -11,12 +15,13 @@ var mouse_overlap = false
 func _ready():
 	$UpgradePrice.hide()
 
+
 func _process(delta):
 	pass
 
 
 func set_label():
-	if plane_level < MAX_LEVEL:
+	if UPGRADE_PRICE.has(plane_colour + str(plane_level)):
 		$UpgradePrice.text = "$" + str(UPGRADE_PRICE[plane_colour + str(plane_level)])
 		$UpgradePrice.show()
 		if global.money < UPGRADE_PRICE[plane_colour + str(plane_level)]:
@@ -41,7 +46,7 @@ func _on_area_2d_mouse_exited():
 
 func _input(event):
 	if Input.is_action_pressed("place") and mouse_overlap:
-		if plane_level < MAX_LEVEL:
+		if UPGRADE_PRICE.has(plane_colour + str(plane_level)):
 			if global.money >= UPGRADE_PRICE[plane_colour + str(plane_level)]:
 				global.money -= UPGRADE_PRICE[plane_colour + str(plane_level)]
 				plane_level += 1
@@ -54,3 +59,5 @@ func _input(event):
 				plane_node.sprite.scale *= 1.5
 				if plane_colour == "Red":
 					plane_node.BULLET_COUNT = plane_node.LEVEL[plane_level]["BULLET_COUNT"]
+				if plane_colour == "Yellow":
+					plane_node.upgrade_range(plane_level)
