@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED := 600.0
+const SPEED := 400.0
 
 var DAMAGE: float
 

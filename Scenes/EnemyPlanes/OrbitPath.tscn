@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://kydlcvubres6"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy/OrbitPath.gd" id="1_eyj2k"]
+[ext_resource type="Script" path="res://Scenes/EnemyPlanes/OrbitPathFollow.gd" id="2_qa6ik"]
+
+[sub_resource type="Curve2D" id="Curve2D_xp5yi"]
+bake_interval = 0.01
+
+[node name="OrbitPath" type="Path2D"]
+curve = SubResource("Curve2D_xp5yi")
+script = ExtResource("1_eyj2k")
+
+[node name="OrbitPathFollow" type="PathFollow2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 250)
+rotation = -2.35619
+script = ExtResource("2_qa6ik")

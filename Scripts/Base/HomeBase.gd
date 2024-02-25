@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var MAX_HEALTH = 200
+@export var MAX_HEALTH = 2000
 var hp
 var money
 

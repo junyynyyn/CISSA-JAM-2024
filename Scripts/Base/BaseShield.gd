@@ -4,7 +4,7 @@ extends Node2D
 @onready var bomb_shield = $BombShield
 
 # Distance from base
-var dist:= 200.0
+var dist:= 80.0
 var center
 
 func _ready():

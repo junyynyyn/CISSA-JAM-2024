@@ -11,7 +11,6 @@ var mouse_overlap = false
 func _ready():
 	$UpgradePrice.hide()
 
-
 func _process(delta):
 	pass
 

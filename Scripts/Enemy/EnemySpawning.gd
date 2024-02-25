@@ -1,8 +1,12 @@
 extends Node2D
 
+var orbit_path = load("res://Scenes/EnemyPlanes/OrbitPath.tscn")
+
 var basic_plane = load("res://Scenes/EnemyPlanes/BasicEnemyPlane.tscn")
 var basic_plane_2 = load("res://Scenes/EnemyPlanes/BasicLevel2EnemyPlane.tscn")
 var basic_plane_boss = load("res://Scenes/EnemyPlanes/BasicEnemyPlaneBoss.tscn")
+
+var basic_plane_burst = load("res://Scenes/EnemyPlanes/EnemyPlaneBurst.tscn")
 
 signal wave_clear
 
@@ -19,7 +23,24 @@ func spawn_wave(wave):
 			var plane = basic_plane_2.instantiate()
 			plane.global_position = %SpawnPoint.global_position
 			add_child(plane)
-	# Spawn bosses at wave 10
+	# Spawn burst firers from round 10+
+	if (wave > 10):
+		for i in roundi((wave/5 - 1)):
+			%SpawnPoint.progress_ratio = randf()
+			var plane = basic_plane_burst.instantiate()
+			plane.global_position = %SpawnPoint.global_position
+			
+			var orbit = orbit_path.instantiate()
+			orbit.position = global.base.global_position
+			
+			plane.path = orbit
+			
+			add_child(orbit)
+			add_child(plane)
+			
+			orbit.set_speed(plane.SPEED)
+			
+	# Spawn bosses logic
 	if (wave % 10 == 0):
 		%SpawnPoint.progress_ratio = randf()
 		var plane = basic_plane_boss.instantiate()

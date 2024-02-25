@@ -4,7 +4,6 @@ var wave_ongoing = true
 
 func _ready():
 	get_tree().paused = true
-	Engine.time_scale = 5.0
 	start_wave()
 
 func _process(delta):
