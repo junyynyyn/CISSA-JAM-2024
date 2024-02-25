@@ -9,6 +9,8 @@ var score
 var money
 var multiplier
 
+var music_volume = 0
+
 var selected_plane = 0
 
 func _ready():
@@ -17,6 +19,3 @@ func _ready():
 	money = 1000
 	multiplier = 1.0
 
-func _input(_event):
-	if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("cancel"):
-		get_tree().paused = !get_tree().paused

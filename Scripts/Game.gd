@@ -9,6 +9,7 @@ func _ready():
 	$BG_Music.play()
 
 func _process(_delta):
+	$BG_Music.volume_db = global.music_volume
 	if global.base.hp <= 0:
 		$DeathScreen.set_values(global.wave,global.score)
 		$DeathScreen.visible = true
@@ -49,7 +50,3 @@ func _on_fast_forward_pressed():
 		Engine.time_scale = 1.0
 	$UI.set_time_scale(Engine.time_scale)
 
-func _on_manual_button_pressed():
-	get_tree().paused = !get_tree().paused
-	$UI/ManualUI.visible = get_tree().paused
-	
