@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0ccjh5x84ye6"]
+
+[ext_resource type="Script" path="res://Scenes/EnemyPlanes/EnemyBomb.gd" id="1_dadle"]
+[ext_resource type="Texture2D" uid="uid://bfaatrkrsiqvn" path="res://Sprites/kenney_pixel-shmup/Tiles/tile_0012.png" id="3_dw1op"]
+[ext_resource type="Texture2D" uid="uid://b2llh5gd2utw1" path="res://Sprites/kenney_pixel-shmup/Tiles/tile_0006.png" id="4_fkoie"]
+[ext_resource type="Texture2D" uid="uid://cuppwe53af6ns" path="res://Sprites/kenney_pixel-shmup/Tiles/tile_0005.png" id="5_7oj21"]
+[ext_resource type="Texture2D" uid="uid://b6i418afl5r85" path="res://Sprites/kenney_pixel-shmup/Tiles/tile_0007.png" id="6_2hoxc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w5sdy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dw1op")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fkoie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7oj21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2hoxc")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 16.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ookcl"]
+radius = 8.0
+height = 24.0
+
+[node name="EnemyBomb" type="Area2D" groups=["enemy_projectile"]]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_dadle")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.756863, 0.121569, 0.172549, 1)
+rotation = 1.5708
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_w5sdy")
+animation = &"hit"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ookcl")
+
+[connection signal="area_entered" from="." to="." method="collided"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]

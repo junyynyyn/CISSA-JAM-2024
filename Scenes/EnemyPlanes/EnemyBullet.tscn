@@ -9,7 +9,7 @@ height = 16.0
 
 [node name="EnemyBullet" type="Area2D" groups=["enemy_projectile"]]
 collision_layer = 8
-collision_mask = 4
+collision_mask = 36
 script = ExtResource("1_chjj4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

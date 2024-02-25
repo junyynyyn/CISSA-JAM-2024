@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED := 400.0
+@export var SPEED := 400.0
 
 var DAMAGE: float
 
@@ -14,4 +14,5 @@ func _physics_process(delta):
 	position += Vector2(1, 0).rotated(rotation) * SPEED * delta
 
 func collided(area):
-	queue_free()
+	if (area.is_in_group("player_base") or area.is_in_group("movable_shield")):
+		queue_free()

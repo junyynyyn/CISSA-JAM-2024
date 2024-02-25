@@ -68,6 +68,7 @@ right={
 2d_physics/layer_3="player_base"
 2d_physics/layer_4="bullets"
 2d_physics/layer_5="ui"
+2d_physics/layer_6="player_shield"
 
 [rendering]
 

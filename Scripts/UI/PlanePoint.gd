@@ -29,7 +29,7 @@ func set_label():
 	else:
 		$UpgradePrice.hide()
 		if $UpgradePrice.has_theme_color_override("font_color"):
-			$UPGRADE_PRICE.remove_theme_color_override("font_color")
+			$UpgradePrice.remove_theme_color_override("font_color")
 
 
 func _on_area_2d_mouse_entered():

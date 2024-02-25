@@ -221,6 +221,14 @@ texture = ExtResource("6_1nhsn")
 visible = false
 script = ExtResource("6_4u325")
 
+[node name="NextWave" type="TextureButton" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FastForward" type="TextureButton" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="WaveLabel" type="Label" parent="UI"]
 offset_right = 51.0
 offset_bottom = 23.0

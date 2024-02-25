@@ -1,15 +1,14 @@
 extends EnemyPlane
 
 var path
-var orbit_distance = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	MAX_HEALTH = 50
-	SPEED = 50
-	DAMAGE = 1
-	REWARD = 100
+	bullet_scene = load("res://Scenes/EnemyPlanes/EnemyBomb.tscn")
+	MAX_HEALTH = 6
+	SPEED = 25
+	DAMAGE = 6
+	REWARD = 20
 	health = MAX_HEALTH
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,14 +26,4 @@ func die():
 	queue_free()
 
 func _on_attack_timer_timeout():
-	fire(0.25)
 	fire(0)
-	fire(0.25)
-	await get_tree().create_timer(0.1).timeout
-	fire(0.25)
-	fire(0)
-	fire(0.25)
-	await get_tree().create_timer(0.1).timeout
-	fire(0.25)
-	fire(0)
-	fire(0.25)
