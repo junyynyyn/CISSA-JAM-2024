@@ -3,9 +3,9 @@ extends EnemyPlane
 var target: Vector2
 
 func _ready():
-	MAX_HEALTH = 2
+	MAX_HEALTH = 2 * global.multiplier
 	SPEED = 25
-	DAMAGE = 1
+	DAMAGE = 1 * global.multiplier
 	REWARD = 20
 	health = MAX_HEALTH
 	target = global.base.position

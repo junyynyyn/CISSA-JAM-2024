@@ -5,10 +5,10 @@ var path
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	bullet_scene = load("res://Scenes/EnemyPlanes/EnemyBomb.tscn")
-	MAX_HEALTH = 50
-	SPEED = 50
-	DAMAGE = 15
-	REWARD = 800
+	MAX_HEALTH = 6 * global.multiplier
+	SPEED = 25
+	DAMAGE = 6 * global.multiplier
+	REWARD = 20
 	health = MAX_HEALTH
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,5 +27,3 @@ func die():
 
 func _on_attack_timer_timeout():
 	fire(0)
-	fire(0.25)
-	fire(-0.25)

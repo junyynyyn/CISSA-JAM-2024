@@ -5,9 +5,9 @@ var orbit_distance = 150
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	MAX_HEALTH = 6
+	MAX_HEALTH = 6 * global.multiplier
 	SPEED = 50
-	DAMAGE = 1
+	DAMAGE = 1 * global.multiplier
 	REWARD = 10
 	health = MAX_HEALTH
 

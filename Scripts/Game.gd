@@ -14,8 +14,8 @@ func _process(_delta):
 		$DeathScreen.visible = true
 		get_tree().paused = true
 
-
 func start_wave():
+	global.multiplier = 1.0 + (0.1 * round(global.wave/10))
 	$EnemyPlanes.spawn_wave(global.wave)
 	wave_ongoing = true
 

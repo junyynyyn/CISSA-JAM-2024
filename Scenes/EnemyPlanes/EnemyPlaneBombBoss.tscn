@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dbpy0cgbj5jsx"]
 
 [ext_resource type="PackedScene" uid="uid://bqa05338fx3y5" path="res://Scenes/EnemyPlanes/EnemyPlane.tscn" id="1_jojsy"]
-[ext_resource type="Script" path="res://Scenes/EnemyPlanes/EnemyPlaneBombBoss.gd" id="2_qg435"]
+[ext_resource type="Script" path="res://Scripts/Enemy/EnemyPlaneBombBoss.gd" id="2_qg435"]
 [ext_resource type="Texture2D" uid="uid://dcfi78jk1n6mh" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0014.png" id="3_ofqel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1t8yd"]

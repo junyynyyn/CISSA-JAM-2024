@@ -4,9 +4,9 @@ var target
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	MAX_HEALTH = 40
+	MAX_HEALTH = 40 * global.multiplier
 	SPEED = 25
-	DAMAGE = 2
+	DAMAGE = 2 * global.multiplier
 	REWARD = 200
 	health = MAX_HEALTH
 	target = global.base.position

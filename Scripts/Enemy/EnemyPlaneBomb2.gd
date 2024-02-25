@@ -5,9 +5,9 @@ var path
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	bullet_scene = load("res://Scenes/EnemyPlanes/EnemyBomb.tscn")
-	MAX_HEALTH = 9
+	MAX_HEALTH = 9 * global.multiplier
 	SPEED = 25
-	DAMAGE = 10
+	DAMAGE = 10 * global.multiplier
 	REWARD = 40
 	health = MAX_HEALTH
 
