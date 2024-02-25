@@ -23,5 +23,4 @@ func set_size(size):
 	curve = circle_curve
 	
 func set_speed(speed):
-	print(speed)
 	%OrbitPathFollow.MOVE_SPEED = speed

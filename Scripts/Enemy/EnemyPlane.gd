@@ -17,13 +17,14 @@ func damage(damage: int):
 	if (health <= 0):
 		die()
 		
-func fire():
+func fire(angle):
 	var bullet = bullet_scene.instantiate()
 	var scene_root = get_tree().root
 	scene_root.add_child(bullet)
 	
 	bullet.position = global_position
 	bullet.look_at(global.base.global_position)
+	bullet.rotation += angle
 	bullet.DAMAGE = DAMAGE
 
 func die():

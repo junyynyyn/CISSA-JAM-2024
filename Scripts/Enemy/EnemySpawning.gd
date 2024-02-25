@@ -6,7 +6,9 @@ var basic_plane = load("res://Scenes/EnemyPlanes/BasicEnemyPlane.tscn")
 var basic_plane_2 = load("res://Scenes/EnemyPlanes/BasicLevel2EnemyPlane.tscn")
 var basic_plane_boss = load("res://Scenes/EnemyPlanes/BasicEnemyPlaneBoss.tscn")
 
-var basic_plane_burst = load("res://Scenes/EnemyPlanes/EnemyPlaneBurst.tscn")
+var plane_burst = load("res://Scenes/EnemyPlanes/EnemyPlaneBurst.tscn")
+var plane_burst_2 = load("res://Scenes/EnemyPlanes/Level2EnemyPlaneBurst.tscn")
+var plane_burst_boss = load("res://Scenes/EnemyPlanes/EnemyPlaneBurstBoss.tscn")
 
 signal wave_clear
 
@@ -27,7 +29,21 @@ func spawn_wave(wave):
 	if (wave > 10):
 		for i in roundi((wave/5 - 1)):
 			%SpawnPoint.progress_ratio = randf()
-			var plane = basic_plane_burst.instantiate()
+			var plane = plane_burst.instantiate()
+			plane.global_position = %SpawnPoint.global_position
+			
+			var orbit = orbit_path.instantiate()
+			orbit.position = global.base.global_position
+			
+			plane.path = orbit
+			
+			add_child(orbit)
+			add_child(plane)
+			
+			orbit.set_speed(plane.SPEED)
+		for i in roundi((wave/5 - 2)):
+			%SpawnPoint.progress_ratio = randf()
+			var plane = plane_burst_2.instantiate()
 			plane.global_position = %SpawnPoint.global_position
 			
 			var orbit = orbit_path.instantiate()
@@ -41,7 +57,21 @@ func spawn_wave(wave):
 			orbit.set_speed(plane.SPEED)
 			
 	# Spawn bosses logic
-	if (wave % 10 == 0):
+	if (wave % 20 == 0):
+		%SpawnPoint.progress_ratio = randf()
+		var plane = plane_burst_boss.instantiate()
+		plane.global_position = %SpawnPoint.global_position
+		
+		var orbit = orbit_path.instantiate()
+		orbit.position = global.base.global_position
+			
+		plane.path = orbit
+			
+		add_child(orbit)
+		add_child(plane)
+			
+		orbit.set_speed(plane.SPEED)
+	elif (wave % 10 == 0):
 		%SpawnPoint.progress_ratio = randf()
 		var plane = basic_plane_boss.instantiate()
 		plane.global_position = %SpawnPoint.global_position

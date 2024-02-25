@@ -18,14 +18,5 @@ func _process(delta):
 	
 	move_and_slide()
 
-func fire():
-	var bullet = bullet_scene.instantiate()
-	var scene_root = get_tree().root
-	scene_root.add_child(bullet)
-	
-	bullet.position = global_position
-	bullet.rotation = rotation
-	bullet.DAMAGE = DAMAGE
-
 func _on_attack_timer_timeout():
-	fire()
+	fire(0)

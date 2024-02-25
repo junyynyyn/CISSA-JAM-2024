@@ -1,32 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3jv7s7y35vse"]
+[gd_scene load_steps=6 format=3 uid="uid://betc6wdnhioy7"]
 
-[ext_resource type="PackedScene" uid="uid://bqa05338fx3y5" path="res://Scenes/EnemyPlanes/EnemyPlane.tscn" id="1_21te8"]
-[ext_resource type="Texture2D" uid="uid://cblwlm5lb32ig" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0021.png" id="2_1lcmp"]
-[ext_resource type="Script" path="res://Scripts/Enemy/EnemyPlaneBurst.gd" id="2_7wgfy"]
+[ext_resource type="PackedScene" uid="uid://bqa05338fx3y5" path="res://Scenes/EnemyPlanes/EnemyPlane.tscn" id="1_aocif"]
+[ext_resource type="Script" path="res://Scenes/EnemyPlanes/EnemyPlaneBurstBoss.gd" id="2_rewmp"]
+[ext_resource type="Texture2D" uid="uid://0v0nct8ia04d" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0013.png" id="3_c1dow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngo24"]
-size = Vector2(15, 22)
+size = Vector2(43, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gi8p"]
-size = Vector2(15, 22)
+size = Vector2(43, 56)
 
-[node name="EnemyPlane" instance=ExtResource("1_21te8")]
-script = ExtResource("2_7wgfy")
+[node name="EnemyPlane" instance=ExtResource("1_aocif")]
+script = ExtResource("2_rewmp")
 
 [node name="Hitbox" parent="." index="0"]
-position = Vector2(-0.5, 0)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_ngo24")
 
 [node name="Sprite2D" parent="." index="1"]
 rotation = 1.5708
-texture = ExtResource("2_1lcmp")
+scale = Vector2(2, 2)
+texture = ExtResource("3_c1dow")
 
 [node name="Hitbox2" parent="." index="3"]
 collision_layer = 2
 collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox2" index="0"]
-position = Vector2(-0.5, 0)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_5gi8p")
 
 [node name="AttackTimer" type="Timer" parent="." index="4"]

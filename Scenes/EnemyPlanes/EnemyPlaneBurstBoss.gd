@@ -1,14 +1,14 @@
 extends EnemyPlane
 
 var path
-var orbit_distance = 150
+var orbit_distance = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	MAX_HEALTH = 2
-	SPEED = 25
+	MAX_HEALTH = 50
+	SPEED = 50
 	DAMAGE = 1
-	REWARD = 10
+	REWARD = 100
 	health = MAX_HEALTH
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,8 +26,14 @@ func die():
 	queue_free()
 
 func _on_attack_timer_timeout():
-	fire()
+	fire(0.25)
+	fire(0)
+	fire(0.25)
 	await get_tree().create_timer(0.1).timeout
-	fire()
+	fire(0.25)
+	fire(0)
+	fire(0.25)
 	await get_tree().create_timer(0.1).timeout
-	fire()
+	fire(0.25)
+	fire(0)
+	fire(0.25)
