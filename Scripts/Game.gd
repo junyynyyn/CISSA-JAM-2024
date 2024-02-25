@@ -30,7 +30,7 @@ func _on_texture_button_button_down():
 	$UI.visible = true
 	$HomeBase.visible = true
 	$MousePointer.visible = true
-	$PlayMenu.visible = false
+	$StartScreen.visible = false
 
 func _on_next_wave_pressed():
 	if (not wave_ongoing):
@@ -52,4 +52,4 @@ func _on_fast_forward_pressed():
 func _on_manual_button_pressed():
 	get_tree().paused = !get_tree().paused
 	$UI/ManualUI.visible = get_tree().paused
-
+	

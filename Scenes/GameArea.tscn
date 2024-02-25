@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://buq8n2bm72jkh"]
+[gd_scene load_steps=29 format=3 uid="uid://buq8n2bm72jkh"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_68hbw"]
 [ext_resource type="Texture2D" uid="uid://dn6uoc18ol23k" path="res://Sprites/kenney_tiny-town/Tilemap/tilemap.png" id="1_ui5r5"]
@@ -20,10 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://c7t8n5t2pkkk7" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0011.png" id="12_l3sow"]
 [ext_resource type="Texture2D" uid="uid://ivcggvsxfcta" path="res://Sprites/kenney_ui-pack/PNG/grey_arrowDownGrey.png" id="12_r1qwl"]
 [ext_resource type="Texture2D" uid="uid://f1abdfnnckvw" path="res://Sprites/Custom/Manual.png" id="13_ecod8"]
-[ext_resource type="Texture2D" uid="uid://ojkiawtkna1u" path="res://Sprites/kenney_ui-pack/PNG/grey_button02.png" id="19_5dbr7"]
-[ext_resource type="Texture2D" uid="uid://blkiq48j8mffu" path="res://Sprites/kenney_ui-pack/PNG/grey_button00.png" id="19_u4i7y"]
 [ext_resource type="AudioStream" uid="uid://cmjby1x7ra6ub" path="res://Audio/Cartoon Battle.mp3" id="20_0fpiu"]
 [ext_resource type="PackedScene" uid="uid://c7oicrpa78ubl" path="res://Scenes/UI/manual_ui.tscn" id="21_02d22"]
+[ext_resource type="PackedScene" uid="uid://cn5tvyf550j1c" path="res://Scenes/Menus/StartScreen.tscn" id="22_6qrro"]
 [ext_resource type="PackedScene" uid="uid://djvbsc1d6q1p7" path="res://Scenes/Menus/DeathScreen.tscn" id="24_dsfq5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6ylo"]
@@ -423,39 +422,7 @@ text = "$300"
 [node name="ManualUI" parent="UI" instance=ExtResource("21_02d22")]
 visible = false
 
-[node name="PlayMenu" type="CanvasLayer" parent="."]
-process_mode = 3
-
-[node name="TextureButton" type="TextureButton" parent="PlayMenu"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -18.0
-offset_top = 27.0
-offset_right = 22.0
-offset_bottom = 67.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("19_u4i7y")
-texture_pressed = ExtResource("19_5dbr7")
-
-[node name="Label" type="Label" parent="PlayMenu/TextureButton"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -43.0
-offset_top = -14.0
-offset_right = 45.0
-offset_bottom = 9.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Start Game"
+[node name="StartScreen" parent="." instance=ExtResource("22_6qrro")]
 
 [node name="DeathScreen" parent="." instance=ExtResource("24_dsfq5")]
 visible = false
@@ -469,4 +436,4 @@ stream = ExtResource("20_0fpiu")
 [connection signal="pressed" from="UI/NextWave" to="." method="_on_next_wave_pressed"]
 [connection signal="button_down" from="UI/FastForward" to="." method="_on_fast_forward_pressed"]
 [connection signal="pressed" from="UI/ManualButton" to="." method="_on_manual_button_pressed"]
-[connection signal="button_down" from="PlayMenu/TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="start_game" from="StartScreen" to="." method="_on_texture_button_button_down"]
