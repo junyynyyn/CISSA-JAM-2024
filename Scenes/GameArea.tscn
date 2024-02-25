@@ -263,6 +263,7 @@ offset_bottom = 74.0
 text = "$300"
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("22_rdyfe")]
+visible = false
 
 [node name="StartScreen" parent="." instance=ExtResource("22_6qrro")]
 
