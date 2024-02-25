@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+var FFTexture = "res://Sprites/kenney_ui-pack/PNG/green_sliderDown.png"
+var StopTexture = "res://Sprites/kenney_ui-pack/PNG/red_sliderDown.png"
+
 func _ready():
 	update_money()
 	
@@ -16,10 +19,9 @@ func update_score():
 
 func update_money():
 	$Money.text = "$" + str(global.money)
-
-
-func _on_speed_button_1x_pressed():
-	Engine.time_scale = 1.0
-
-func _on_speed_button_2x_pressed():
-	Engine.time_scale = 2.0
+	
+func set_time_scale(scale):
+	$FastForward/Label.text = "x" + str(scale)
+	
+func continous(value):
+	$"NextWave/Continous Waves".text = "Continous Waves: " + str(value).capitalize()

@@ -132,5 +132,6 @@ func spawn_wave(wave):
 
 func _process(delta):
 	if (wave_ongoing and get_child_count() == 1):
-		wave_clear.emit()
 		wave_ongoing = false
+		wave_clear.emit()
+		
