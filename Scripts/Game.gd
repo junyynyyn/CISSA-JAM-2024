@@ -4,7 +4,9 @@ var wave_ongoing = false
 
 func _ready():
 	get_tree().paused = true
-	Engine.time_scale = 1.0
+	Engine.time_scale = 2.0
+	start_wave()
+	$BG_Music.play()
 
 func _process(delta):
 	if global.base.hp <= 0:
@@ -28,3 +30,6 @@ func _on_texture_button_button_down():
 func _on_next_wave_pressed():
 	if (not wave_ongoing):
 		start_wave()
+
+func _on_bg_music_finished():
+	$BG_Music.play()
