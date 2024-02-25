@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://buq8n2bm72jkh"]
+[gd_scene load_steps=28 format=3 uid="uid://buq8n2bm72jkh"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_68hbw"]
 [ext_resource type="Texture2D" uid="uid://dn6uoc18ol23k" path="res://Sprites/kenney_tiny-town/Tilemap/tilemap.png" id="1_ui5r5"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://3l1e0kdjwaan" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0010.png" id="11_kn65q"]
 [ext_resource type="Texture2D" uid="uid://c7t8n5t2pkkk7" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0011.png" id="12_l3sow"]
 [ext_resource type="Texture2D" uid="uid://ivcggvsxfcta" path="res://Sprites/kenney_ui-pack/PNG/grey_arrowDownGrey.png" id="12_r1qwl"]
-[ext_resource type="Texture2D" uid="uid://f1abdfnnckvw" path="res://Sprites/Custom/Manual.png" id="13_ecod8"]
 [ext_resource type="AudioStream" uid="uid://cmjby1x7ra6ub" path="res://Audio/Cartoon Battle.mp3" id="20_0fpiu"]
 [ext_resource type="PackedScene" uid="uid://boetjb5hxfqr6" path="res://Scenes/Menus/StartScreen.tscn" id="22_6qrro"]
 [ext_resource type="PackedScene" uid="uid://d4h8m34mgcgy1" path="res://Scenes/UI/PauseMenu.tscn" id="22_rdyfe"]
@@ -288,20 +287,6 @@ text = "x1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ManualButton" type="TextureButton" parent="UI"]
-process_mode = 3
-offset_left = 1093.0
-offset_top = 6.0
-offset_right = 1142.0
-offset_bottom = 55.0
-texture_normal = ExtResource("10_c0r4v")
-
-[node name="Sprite2D" type="Sprite2D" parent="UI/ManualButton"]
-position = Vector2(4, 2)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("13_ecod8")
-centered = false
-
 [node name="WaveLabel" type="Label" parent="UI"]
 offset_right = 51.0
 offset_bottom = 23.0
@@ -434,5 +419,4 @@ stream = ExtResource("20_0fpiu")
 [connection signal="area_exited" from="MousePointer" to="MousePointer" method="_on_area_exited"]
 [connection signal="pressed" from="UI/NextWave" to="." method="_on_next_wave_pressed"]
 [connection signal="button_down" from="UI/FastForward" to="." method="_on_fast_forward_pressed"]
-[connection signal="pressed" from="UI/ManualButton" to="." method="_on_manual_button_pressed"]
 [connection signal="start_game" from="StartScreen" to="." method="_on_texture_button_button_down"]
