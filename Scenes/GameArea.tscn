@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c7t8n5t2pkkk7" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0011.png" id="12_l3sow"]
 [ext_resource type="Texture2D" uid="uid://ivcggvsxfcta" path="res://Sprites/kenney_ui-pack/PNG/grey_arrowDownGrey.png" id="12_r1qwl"]
 [ext_resource type="PackedScene" uid="uid://boetjb5hxfqr6" path="res://Scenes/Menus/StartScreen.tscn" id="22_6qrro"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/PauseMenu.tscn" id="22_rdyfe"]
+[ext_resource type="PackedScene" uid="uid://d4h8m34mgcgy1" path="res://Scenes/UI/PauseMenu.tscn" id="22_rdyfe"]
 [ext_resource type="PackedScene" uid="uid://djvbsc1d6q1p7" path="res://Scenes/Menus/DeathScreen.tscn" id="24_dsfq5"]
 [ext_resource type="AudioStream" uid="uid://b58fpmjn1buuf" path="res://Audio/At Launch.mp3" id="24_nfo4o"]
 
