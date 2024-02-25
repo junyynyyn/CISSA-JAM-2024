@@ -21,8 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://ivcggvsxfcta" path="res://Sprites/kenney_ui-pack/PNG/grey_arrowDownGrey.png" id="12_r1qwl"]
 [ext_resource type="Texture2D" uid="uid://f1abdfnnckvw" path="res://Sprites/Custom/Manual.png" id="13_ecod8"]
 [ext_resource type="AudioStream" uid="uid://cmjby1x7ra6ub" path="res://Audio/Cartoon Battle.mp3" id="20_0fpiu"]
-[ext_resource type="PackedScene" uid="uid://c7oicrpa78ubl" path="res://Scenes/UI/manual_ui.tscn" id="21_02d22"]
-[ext_resource type="PackedScene" uid="uid://cn5tvyf550j1c" path="res://Scenes/Menus/StartScreen.tscn" id="22_6qrro"]
+[ext_resource type="PackedScene" uid="uid://boetjb5hxfqr6" path="res://Scenes/Menus/StartScreen.tscn" id="22_6qrro"]
+[ext_resource type="PackedScene" uid="uid://d4h8m34mgcgy1" path="res://Scenes/UI/PauseMenu.tscn" id="22_rdyfe"]
 [ext_resource type="PackedScene" uid="uid://djvbsc1d6q1p7" path="res://Scenes/Menus/DeathScreen.tscn" id="24_dsfq5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6ylo"]
@@ -419,8 +419,7 @@ offset_right = 44.0
 offset_bottom = 74.0
 text = "$300"
 
-[node name="ManualUI" parent="UI" instance=ExtResource("21_02d22")]
-visible = false
+[node name="PauseMenu" parent="UI" instance=ExtResource("22_rdyfe")]
 
 [node name="StartScreen" parent="." instance=ExtResource("22_6qrro")]
 

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://5bxm7d0x8t5k"]
+
+[ext_resource type="Script" path="res://Scripts/UI/volume_slider.gd" id="1_72uv0"]
+[ext_resource type="AudioStream" uid="uid://bp7ru7wma22yx" path="res://Audio/Pew Sound Effect.mp3" id="2_o24lq"]
+
+[node name="VolumeSlider" type="HSlider"]
+offset_right = 190.0
+offset_bottom = 16.0
+min_value = -50.0
+max_value = 30.0
+value = -10.0
+script = ExtResource("1_72uv0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = -24.0
+offset_right = 190.0
+offset_bottom = -1.0
+text = "Music
+"
+horizontal_alignment = 1
+
+[node name="TestSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_o24lq")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

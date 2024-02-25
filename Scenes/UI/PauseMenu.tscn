@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4h8m34mgcgy1"]
+
+[ext_resource type="Texture2D" uid="uid://blkiq48j8mffu" path="res://Sprites/kenney_ui-pack/PNG/grey_button00.png" id="1_7x08d"]
+[ext_resource type="PackedScene" uid="uid://5bxm7d0x8t5k" path="res://Scenes/UI/volume_slider.tscn" id="1_tajuv"]
+[ext_resource type="Script" path="res://Scripts/UI/PauseMenu.gd" id="1_tftrp"]
+[ext_resource type="Texture2D" uid="uid://8q0nnmt1iwd3" path="res://Sprites/kenney_ui-pack/PNG/red_button00.png" id="2_xau7o"]
+[ext_resource type="PackedScene" uid="uid://c7oicrpa78ubl" path="res://Scenes/UI/manual_ui.tscn" id="5_iqplj"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tftrp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 604.0
+offset_top = 128.0
+offset_right = 1064.0
+offset_bottom = 528.0
+color = Color(0.439216, 0.439216, 0.439216, 1)
+
+[node name="ResumeButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 739.0
+offset_top = 168.0
+offset_right = 929.0
+offset_bottom = 213.0
+texture_normal = ExtResource("1_7x08d")
+
+[node name="Label" type="Label" parent="ResumeButton"]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Resume
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 739.0
+offset_top = 418.0
+offset_right = 929.0
+offset_bottom = 463.0
+texture_normal = ExtResource("2_xau7o")
+
+[node name="Label" type="Label" parent="ExitButton"]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeSlider" parent="." instance=ExtResource("1_tajuv")]
+layout_mode = 0
+offset_left = 739.0
+offset_top = 298.0
+offset_right = 929.0
+offset_bottom = 314.0
+
+[node name="ManualUI" parent="." instance=ExtResource("5_iqplj")]
+layout_mode = 1
+offset_left = 110.0
+offset_top = 50.0
+offset_right = -572.0
+offset_bottom = 50.0
+
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
