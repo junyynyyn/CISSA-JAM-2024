@@ -16,10 +16,3 @@ func update_score():
 
 func update_money():
 	$Money.text = "$" + str(global.money)
-
-
-func _on_speed_button_1x_pressed():
-	Engine.time_scale = 1.0
-
-func _on_speed_button_2x_pressed():
-	Engine.time_scale = 2.0

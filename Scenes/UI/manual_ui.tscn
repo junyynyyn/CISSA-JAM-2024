@@ -1,0 +1,110 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7oicrpa78ubl"]
+
+[ext_resource type="Texture2D" uid="uid://bqjjw4qvbr12i" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0004.png" id="1_ito26"]
+[ext_resource type="Texture2D" uid="uid://dyx1q61p0fsex" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0005.png" id="2_bjgxm"]
+[ext_resource type="Texture2D" uid="uid://bj0d0jw0jnrc" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0006.png" id="3_2h7ic"]
+[ext_resource type="Texture2D" uid="uid://hjpqb7k3ntah" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0007.png" id="4_e6ckh"]
+[ext_resource type="Texture2D" uid="uid://c2dxijh8te2jc" path="res://Sprites/kenney_ui-pack/PNG/grey_button11.png" id="5_42pgd"]
+
+[node name="ManualUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 355.0
+offset_top = 40.0
+offset_right = 355.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BluePlaneManual" type="Label" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 30.0
+offset_right = 353.0
+offset_bottom = 131.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Fires at nearby enemies.
+Attack Speed: Fast
+Damage: Low
+Move Speed: Fast"
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="BluePlaneManual"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3, 3)
+texture = ExtResource("1_ito26")
+
+[node name="RedPlaneManual" type="Label" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 150.0
+offset_right = 353.0
+offset_bottom = 251.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Fires around the plane.
+Attack Speed: Med
+Damage: Low
+Move Speed: Med"
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="RedPlaneManual"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3, 3)
+texture = ExtResource("2_bjgxm")
+
+[node name="GreenPlaneManual" type="Label" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 270.0
+offset_right = 353.0
+offset_bottom = 371.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Throws bombs at enemies.
+Attack Speed: Med
+Damage: Med
+Move Speed: Slow"
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="GreenPlaneManual"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3, 3)
+texture = ExtResource("3_2h7ic")
+
+[node name="YellowPlaneManual" type="Label" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 390.0
+offset_right = 353.0
+offset_bottom = 491.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Fires high velocity shots.
+Attack Speed: Slow
+Damage: High
+Move Speed: Slow"
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="YellowPlaneManual"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3, 3)
+texture = ExtResource("4_e6ckh")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 442.0
+offset_bottom = 547.0
+texture = ExtResource("5_42pgd")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2

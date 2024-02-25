@@ -11,7 +11,8 @@ func _ready():
 func _process(delta):
 	if global.base.hp <= 0:
 		get_tree().reload_current_scene()
-	
+
+
 func start_wave():
 	$EnemyPlanes.spawn_wave(global.wave)
 	wave_ongoing = true
@@ -31,5 +32,12 @@ func _on_next_wave_pressed():
 	if (not wave_ongoing):
 		start_wave()
 
+
 func _on_bg_music_finished():
 	$BG_Music.play()
+
+
+func _on_manual_button_pressed():
+	get_tree().paused = !get_tree().paused
+	$UI/ManualUI.visible = get_tree().paused
+

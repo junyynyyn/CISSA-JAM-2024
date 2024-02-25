@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://buq8n2bm72jkh"]
+[gd_scene load_steps=29 format=3 uid="uid://buq8n2bm72jkh"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_68hbw"]
 [ext_resource type="Texture2D" uid="uid://dn6uoc18ol23k" path="res://Sprites/kenney_tiny-town/Tilemap/tilemap.png" id="1_ui5r5"]
@@ -19,9 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://3l1e0kdjwaan" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0010.png" id="11_kn65q"]
 [ext_resource type="Texture2D" uid="uid://c7t8n5t2pkkk7" path="res://Sprites/kenney_pixel-shmup/Ships/ship_0011.png" id="12_l3sow"]
 [ext_resource type="Texture2D" uid="uid://ivcggvsxfcta" path="res://Sprites/kenney_ui-pack/PNG/grey_arrowDownGrey.png" id="12_r1qwl"]
+[ext_resource type="Texture2D" path="res://Sprites/Custom/Manual.png" id="13_ecod8"]
 [ext_resource type="Texture2D" uid="uid://ojkiawtkna1u" path="res://Sprites/kenney_ui-pack/PNG/grey_button02.png" id="19_5dbr7"]
 [ext_resource type="Texture2D" uid="uid://blkiq48j8mffu" path="res://Sprites/kenney_ui-pack/PNG/grey_button00.png" id="19_u4i7y"]
 [ext_resource type="AudioStream" uid="uid://cmjby1x7ra6ub" path="res://Audio/Cartoon Battle.mp3" id="20_0fpiu"]
+[ext_resource type="PackedScene" uid="uid://c7oicrpa78ubl" path="res://Scenes/UI/manual_ui.tscn" id="21_02d22"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6ylo"]
 texture = ExtResource("1_ui5r5")
@@ -221,6 +223,7 @@ shape = SubResource("RectangleShape2D_j1vn4")
 texture = ExtResource("6_1nhsn")
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("6_4u325")
 
 [node name="NextWave" type="TextureButton" parent="UI"]
@@ -269,6 +272,20 @@ theme_override_font_sizes/font_size = 30
 text = "x1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ManualButton" type="TextureButton" parent="UI"]
+process_mode = 3
+offset_left = 1093.0
+offset_top = 6.0
+offset_right = 1142.0
+offset_bottom = 55.0
+texture_normal = ExtResource("10_c0r4v")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/ManualButton"]
+position = Vector2(4, 2)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("13_ecod8")
+centered = false
 
 [node name="WaveLabel" type="Label" parent="UI"]
 offset_right = 51.0
@@ -387,6 +404,9 @@ offset_right = 44.0
 offset_bottom = 74.0
 text = "$300"
 
+[node name="ManualUI" parent="UI" instance=ExtResource("21_02d22")]
+visible = false
+
 [node name="PlayMenu" type="CanvasLayer" parent="."]
 process_mode = 3
 
@@ -428,4 +448,5 @@ stream = ExtResource("20_0fpiu")
 [connection signal="area_entered" from="MousePointer" to="MousePointer" method="_on_area_entered"]
 [connection signal="area_exited" from="MousePointer" to="MousePointer" method="_on_area_exited"]
 [connection signal="pressed" from="UI/NextWave" to="." method="_on_next_wave_pressed"]
+[connection signal="pressed" from="UI/ManualButton" to="." method="_on_manual_button_pressed"]
 [connection signal="button_down" from="PlayMenu/TextureButton" to="." method="_on_texture_button_button_down"]
